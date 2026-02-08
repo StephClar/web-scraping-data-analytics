@@ -25,6 +25,14 @@ Data is scraped from http://books.toscrape.com, a practice website for scraping.
 ### Rating Distribution
 ![Rating Distribution](charts/rating_distribution.png)
 
+## Advanced Data Analysis
+
+- Performed descriptive statistical analysis on book prices and ratings
+- Visualized price vs rating relationships
+- Identified outliers using boxplots
+- Analyzed feature correlations using heatmaps
+
+
 ## Files
 - `books_scraper.py` – Scrapes book data
 - `analyze.py` – Cleans and analyzes the data
