@@ -1,18 +1,26 @@
 import os
 import pandas as pd
+
 from sklearn.model_selection import train_test_split
 from sklearn.linear_model import LinearRegression
-from sklearn.metrics import mean_absolute_error, r2_score
+from sklearn.preprocessing import StandardScaler
+from sklearn.pipeline import Pipeline
+from sklearn.metrics import mean_absolute_error, mean_squared_error, r2_score
 
+# --------------------------------------------------
 # Get project root path
+# --------------------------------------------------
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 DATA_PATH = os.path.join(BASE_DIR, "books_data.csv")
 
-# Load data
+# --------------------------------------------------
+# Load dataset
+# --------------------------------------------------
 df = pd.read_csv(DATA_PATH, encoding="utf-8")
 
-
-# Clean price
+# --------------------------------------------------
+# Clean price column
+# --------------------------------------------------
 df["price"] = (
     df["price"]
     .str.replace("£", "", regex=False)
@@ -20,7 +28,9 @@ df["price"] = (
     .astype(float)
 )
 
-# Convert rating to numbers
+# --------------------------------------------------
+# Convert rating text to numeric values
+# --------------------------------------------------
 rating_map = {
     "One": 1,
     "Two": 2,
@@ -28,24 +38,45 @@ rating_map = {
     "Four": 4,
     "Five": 5
 }
+
 df["rating_num"] = df["rating"].map(rating_map)
 
+# --------------------------------------------------
 # Features and target
+# --------------------------------------------------
 X = df[["rating_num"]]
 y = df["price"]
 
+# --------------------------------------------------
 # Train-test split
+# --------------------------------------------------
 X_train, X_test, y_train, y_test = train_test_split(
     X, y, test_size=0.2, random_state=42
 )
 
-# Model
-model = LinearRegression()
-model.fit(X_train, y_train)
+# --------------------------------------------------
+# ML Pipeline
+# --------------------------------------------------
+pipeline = Pipeline([
+    ("scaler", StandardScaler()),
+    ("model", LinearRegression())
+])
+
+pipeline.fit(X_train, y_train)
 
 # Predictions
-y_pred = model.predict(X_test)
+y_pred = pipeline.predict(X_test)
 
+# --------------------------------------------------
 # Evaluation
-print("Mean Absolute Error:", mean_absolute_error(y_test, y_pred))
-print("R2 Score:", r2_score(y_test, y_pred))
+# --------------------------------------------------
+mae = mean_absolute_error(y_test, y_pred)
+mse = mean_squared_error(y_test, y_pred)
+rmse = mse ** 0.5
+r2 = r2_score(y_test, y_pred)
+
+print("📊 Model Performance")
+print("--------------------")
+print(f"Mean Absolute Error (MAE): {mae:.2f}")
+print(f"Root Mean Squared Error (RMSE): {rmse:.2f}")
+print(f"R² Score: {r2:.4f}")
