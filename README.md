@@ -37,6 +37,12 @@ Data is scraped from http://books.toscrape.com, a practice website for scraping.
 - Used train-test split and evaluated using MAE and R² score
 - Demonstrates feature engineering and model evaluation
 
+## Recommendation System
+
+- Built an item-based recommendation system using cosine similarity
+- Recommends similar books based on price and rating features
+- Demonstrates feature scaling and similarity metrics
+
 
 ## Author
 Stephania Clarice A S
