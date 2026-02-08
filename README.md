@@ -1,63 +1,43 @@
-# Web Scraping & Data Analytics Project 
+# 📚 Web Scraping & Data Analytics Project
 
-## Overview
-This project demonstrates web scraping and basic data analytics using Python.
-Data is scraped from http://books.toscrape.com, a practice website for scraping.
+This project demonstrates an end-to-end **data analytics and machine learning pipeline**, starting from web scraping raw data to building an interactive dashboard with predictions.
 
-## Objectives
-- Scrape product data using BeautifulSoup
-- Store data in CSV format
-- Clean and analyze the data using Pandas
-- Perform basic exploratory data analysis
+---
 
-## Technologies Used
-- Python
-- Requests
-- BeautifulSoup
-- Pandas
-- Matplotlib (optional)
+## 🚀 Project Overview
 
-## Data Visualizations
+- Scraped book data from an online website using **Python & BeautifulSoup**
+- Cleaned and preprocessed unstructured scraped data
+- Performed **exploratory data analysis (EDA)** and visualizations
+- Built a **machine learning model** to predict book prices based on ratings
+- Developed a **multi-page Streamlit dashboard** for interactive analysis
 
-### Price Distribution
-![Price Distribution](charts/price_distribution.png)
+---
 
-### Rating Distribution
-![Rating Distribution](charts/rating_distribution.png)
+## 🛠️ Tech Stack
 
-## Advanced Data Analysis
+- **Programming Language:** Python  
+- **Web Scraping:** BeautifulSoup, Requests  
+- **Data Analysis:** Pandas, NumPy  
+- **Visualization:** Matplotlib  
+- **Machine Learning:** Scikit-learn  
+- **Dashboard:** Streamlit  
+- **Version Control:** Git & GitHub  
 
-- Performed descriptive statistical analysis on book prices and ratings
-- Visualized price vs rating relationships
-- Identified outliers using boxplots
-- Analyzed feature correlations using heatmaps
+---
 
+## 📊 Dashboard Features
 
-## Files
-- `books_scraper.py` – Scrapes book data
-- `analyze.py` – Cleans and analyzes the data
-- `books_data.csv` – Scraped dataset
+- 📄 Dataset overview and structure
+- 📈 Price distribution and rating-based visualizations
+- 🤖 Book price prediction using Linear Regression
+- 🧭 Multi-page navigation using Streamlit Pages
 
-## Machine Learning
+---
 
-### Price Prediction Model
-- Built a Linear Regression model to predict book prices based on ratings
-- Used train-test split and evaluated using MAE and R² score
-- Demonstrates feature engineering and model evaluation
+## ▶️ How to Run the Project
 
-## Recommendation System
-
-- Built an item-based recommendation system using cosine similarity
-- Recommends similar books based on price and rating features
-- Demonstrates feature scaling and similarity metrics
-
-## Interactive Dashboard
-
-- Built an interactive Streamlit dashboard
-- Visualizes book data and analytics
-- Includes ML-based price prediction
-- Includes recommendation system
-
-
-## Author
-Stephania Clarice A S
+### 1. Clone the repository
+```bash
+git clone https://github.com/StephClar/web-scraping-data-analytics.git
+cd web-scraping-data-analytics
