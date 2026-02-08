@@ -17,6 +17,14 @@ Data is scraped from http://books.toscrape.com, a practice website for scraping.
 - Pandas
 - Matplotlib (optional)
 
+## Data Visualizations
+
+### Price Distribution
+![Price Distribution](charts/price_distribution.png)
+
+### Rating Distribution
+![Rating Distribution](charts/rating_distribution.png)
+
 ## Files
 - `books_scraper.py` – Scrapes book data
 - `analyze.py` – Cleans and analyzes the data
