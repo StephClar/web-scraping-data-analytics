@@ -30,10 +30,13 @@ Data is scraped from http://books.toscrape.com, a practice website for scraping.
 - `analyze.py` – Cleans and analyzes the data
 - `books_data.csv` – Scraped dataset
 
-## Future Enhancements
-- Scrape multiple pages
-- Add visual dashboards
-- Build ML models (price prediction, recommendations)
+## Machine Learning
+
+### Price Prediction Model
+- Built a Linear Regression model to predict book prices based on ratings
+- Used train-test split and evaluated using MAE and R² score
+- Demonstrates feature engineering and model evaluation
+
 
 ## Author
 Stephania Clarice A S
