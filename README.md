@@ -43,6 +43,13 @@ Data is scraped from http://books.toscrape.com, a practice website for scraping.
 - Recommends similar books based on price and rating features
 - Demonstrates feature scaling and similarity metrics
 
+## Interactive Dashboard
+
+- Built an interactive Streamlit dashboard
+- Visualizes book data and analytics
+- Includes ML-based price prediction
+- Includes recommendation system
+
 
 ## Author
 Stephania Clarice A S
